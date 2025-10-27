@@ -119,14 +119,6 @@ Open [http://localhost:3000](http://localhost:3000).
 - Appends a hidden line: `Normalized engagement score (0-1): <value>` when Mood Mode is on
 - Returns a single message
 
-## Next steps (optional)
-
-- Persist calibration bounds and chat logs to IndexedDB
-- Stream assistant responses using Assistant UI’s data-stream runtime
-- Add visualization (graphs) for engagement history
-- Implement structured data exports (EEG + chat transcript)
-- Build study scripts (topic seeds, quizzes, analysis notebooks)
-
 ## Voice Mode (OpenAI Realtime)
 
 Minimal voice interface backed by OpenAI’s Realtime API.
@@ -145,9 +137,4 @@ How it works:
 - The client requests an ephemeral key from `/api/realtime/session` (server uses your `OPENAI_API_KEY`).
 - A WebRTC `RTCPeerConnection` is created; the mic track is added, and a data channel carries events.
 - When you click “Ask (voice)”, the client freezes the current 15s engagement average and sends a `response.create` event whose `instructions` are `systemPrompt + "Normalized engagement score (0-1): <value>"`.
-- The Realtime model returns both audio (played automatically) and text (displayed under the Voice panel and mirrored into the main chat thread). Your microphone input is transcribed locally via the Web Speech API and shown alongside the assistant reply.
-
-Notes:
-- Browsers may require a user gesture before autoplay; click Connect first.
-- Voice and text chat are currently separate surfaces; merging transcripts into the main Thread can be added later.
-- Engagement freeze/unfreeze mirrors the text flow: freeze on speak, unfreeze after response.
+- The Realtime model returns audio (played automatically). Your microphone input is transcribed locally via the Web Speech API and shown alongside the assistant reply.
