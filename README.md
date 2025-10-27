@@ -37,23 +37,6 @@ Flags:
 - `--cmd CMD` (repeatable) sends custom `config_board` commands after the session is prepared (default list matches `streaming.py`)
 - `--apply-default-cyton-config` sends the 16 commands from `streaming.py`
 
-The bridge broadcasts JSON engagement packets at ~1 Hz:
-
-```json
-{
-  "type": "engagement",
-  "ts": 1710000000000,
-  "fs": 250,
-  "E": 0.42,
-  "Enorm": 0.68,
-  "alpha": 1.2e-6,
-  "theta": 9.3e-7,
-  "beta": 3.1e-6,
-  "Emin": 0.11,
-  "Emax": 0.62,
-  "mode": "normal"
-}
-```
 
 Clients can send control messages:
 - `{ "type": "subscribe" }`
