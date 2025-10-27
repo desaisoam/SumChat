@@ -1,3 +1,4 @@
+![SumChat](https://github.com/user-attachments/assets/5e75bdae-223a-4809-a990-1824f530f6ea)
 
 ## Engagement Metric Recap
 
